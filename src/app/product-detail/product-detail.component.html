@@ -1,0 +1,83 @@
+<div class="h-[1200px] bg-white text-slate-600 hero2 w-full px-[112px] py-12">
+  <div class="grid grid-cols-5 w-full justify-between">
+    <figure class="col-span-2">
+      <img src="{{ selectProduct?.img }}" />
+    </figure>
+    <div class="col-span-3 flex flex-col gap-4">
+      <h2 class="card-title text-3xl text-slate-800">
+        {{ selectProduct?.name }}
+      </h2>
+      <p class="text-slate-400">{{ selectProduct?.description }}</p>
+      <!-- Rating -->
+      <div class="flex gap-4 items-center">
+        <div class="rating rating-sm flex gap-0.5">
+          <input
+            type="radio"
+            name="rating-4"
+            class="mask mask-star-2 bg-orange-600"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            class="mask mask-star-2 bg-orange-600"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            class="mask mask-star-2 bg-orange-600"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            class="mask mask-star-2 bg-orange-600"
+            checked="checked"
+          />
+          <input
+            type="radio"
+            name="rating-4"
+            class="mask mask-star-2 bg-orange-600"
+          />
+        </div>
+        <p class="text-sm text-slate-600">(121)</p>
+      </div>
+      <div class="flex flex-col gap-1 my-4">
+        <p class="card-subtitle font-semibold text-xl">
+          ${{ selectProduct?.price }}
+        </p>
+        <p class="card-subtitle text-md text-slate-400">
+          Suggested payments with 6 months special financing
+        </p>
+      </div>
+      <div class="w-full h-0.5 bg-slate-100 text-slate-800 mt-2 mb-1"></div>
+      <p class="card-subtitle font-semibold text-base">Quantity</p>
+      <div class="join">
+        <button
+          class="join-item btn rounded-l-full"
+          (click)="decreaseQuantity()"
+        >
+          -
+        </button>
+        <button class="join-item btn text-orange-600">{{ quantity }}</button>
+        <button
+          class="join-item btn text-orange-600 rounded-r-full"
+          (click)="increaseQuantity()"
+        >
+          +
+        </button>
+      </div>
+      <div class="card-actions">
+        <button
+          class="btn border-none bg-orange-600 text-white hover:bg-orange-500 w-[194px] rounded-full"
+          (click)="navigateToSummary(selectProduct)"
+        >
+          Buy Now
+        </button>
+        <button
+          class="btn border-none bg-white text-white hover:bg-orange-50 w-[194px] rounded-full border-solid border-2 border-orange-600 hover:border-orange-600 text-orange-600"
+        >
+          Add tocart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

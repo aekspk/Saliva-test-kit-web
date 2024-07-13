@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'parzel-web-application' title`, () => {
+  it(`should have the 'salivax-web-application' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('parzel-web-application');
+    expect(app.title).toEqual('salivax-web-application');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, parzel-web-application');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, salivax-web-application'
+    );
   });
 });

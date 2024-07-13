@@ -1,0 +1,24 @@
+<div class="relative hero-scroll1">
+  <!-- Image BG -->
+  <div
+    class="hero bg-image h-full fixed z-0 bg1"
+    style="
+      /* background-image: url(/assets/image/bg-resize2.jpg); */
+      background-image: url(/assets/image/cov2.jpg);
+      background-repeat: no-repeat; /* Prevent background image from repeating */
+      background-size: cover; /* Ensure background image covers the entire element */
+    "
+  >
+    <div class="hero-overlay bg-opacity-50"></div>
+  </div>
+
+  <div class="sticky z-10 w-full">
+    <!-- Header -->
+    <app-header class="header z-20 text-slate-100"></app-header>
+
+    <!-- Hero -->
+    <app-hero1></app-hero1>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</div>

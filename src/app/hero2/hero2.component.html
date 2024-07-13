@@ -1,0 +1,58 @@
+<div class="h-[1200px] bg-white text-slate-600 hero2 w-full px-[112px] py-12">
+  <div class="grid grid-cols-5 w-full justify-between">
+    <div class="flex flex-col">
+      <h2>Brand</h2>
+      @for (brand of brands; track $index) {
+      <mat-checkbox
+        [checked]="brand.checked"
+        (change)="brand.checked = !brand.checked; onBrandChange()"
+        >{{ brand.name }}</mat-checkbox
+      >
+      }
+    </div>
+    <div class="grid gap-4 col-span-4">
+      <div class="flex flex-col gap-4">
+        <div class="w-full flex flex-col">
+          <div class="flex gap-2 w-full justify-end">
+            <p>Sort by :</p>
+            <select
+              [(ngModel)]="selectedSortOption"
+              (ngModelChange)="
+                filteredProducts[0] ? sortFilter() : sortProducts()
+              "
+              class="bg-transparent text-orange-600 font-semibold"
+            >
+              <option value="newest">Newest</option>
+              <option value="asc">Price : Ascending</option>
+              <option value="desc">Price : Descending</option>
+            </select>
+          </div>
+          <div class="w-full h-0.5 bg-slate-100 text-slate-800 mt-2 mb-1"></div>
+        </div>
+        <!-- Card1 -->
+        <div class="grid grid-cols-4 gap-4">
+          @for (product of (filteredProducts[0] ? filteredProducts : products);
+          track $index) {
+          <div
+            class="card rounded-lg bg-white w-auto border-solid border-2 border-slate-100 transition-transform transform hover:-translate-y-2 hover:cursor-pointer"
+            (click)="navigateToProduct(product)"
+          >
+            <figure>
+              <img src="{{ product.img }}" />
+            </figure>
+            <div class="card-body">
+              <p class="card-subtitle font-semibold text-xl">
+                ${{ product.price }}
+              </p>
+              <h2 class="card-title line-clamp-2 text-base">
+                {{ product.name }}
+              </h2>
+              <div class="flex"></div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

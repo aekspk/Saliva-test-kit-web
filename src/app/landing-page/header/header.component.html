@@ -1,0 +1,27 @@
+<!-- Header -->
+<div
+  class="navbar bg-base-100 flex w-full justify-between px-[112px] bg-transparent"
+>
+  <div class="w-[100px] flex justify-center items-center">
+    <div class="cursor-pointer" [routerLink]="['/']">
+      <!-- <mat-icon class="transform scale-400" svgIcon="logo-mono4"></mat-icon> -->
+      <mat-icon class="transform scale-600" svgIcon="logo-rayna"></mat-icon>
+      <!-- <img src="assets/image/mono4-high-resolution-logo-white-transparent.png" /> -->
+    </div>
+  </div>
+
+  <div class="">
+    <ul class="menu menu-horizontal px-1">
+      <li><a class="font-medium">Login / Sign up</a></li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul class="p-2 bg-base-100 rounded-t-none">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
