@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetails } from '../assets/config/data.type';
 import { productDetails } from '../assets/config/data.config';
+import { AddToCartService } from '../assets/service/add-to-cart.service';
 
 @Component({
   selector: 'app-order-summary',
@@ -15,11 +16,13 @@ export class OrderSummaryComponent implements OnInit {
   summaryProduct: ProductDetails | undefined;
   productDetails: ProductDetails[] = productDetails;
   quantity: number = 0;
-  totalPrice = 0;
+  totalProductPrice: number = 0;
+  total: number = 0;
 
   //DI
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+  addToCartService = inject(AddToCartService);
 
   constructor() {
     window.scrollTo(0, 0);
@@ -31,8 +34,11 @@ export class OrderSummaryComponent implements OnInit {
       (products) => products.id === this.productId
     );
 
-    this.totalPrice = parseFloat(
+    this.totalProductPrice = parseFloat(
       (this.quantity * (this.summaryProduct?.price || 0)).toFixed(2)
+    );
+    this.total = parseFloat(
+      (this.totalProductPrice + this.totalProductPrice * (10 / 100)).toFixed(2)
     );
   }
 }

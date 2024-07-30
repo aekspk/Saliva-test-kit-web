@@ -1,14 +1,18 @@
-<div class="h-[1200px] bg-white text-slate-600 hero2 w-full px-[112px] py-12">
-  <div class="grid grid-cols-5 w-full justify-between">
-    <div class="flex flex-col">
+<div
+  class="h-full bg-white text-slate-600 hero2 w-full px-[20px] md:px-[40px] lg:px-[112px] xl:px-[112px] 2xl:px-[112px] bg-transparent py-8 md:py-12 lg:py-12"
+>
+  <div class="md:grid lg:grid grid-cols-5 w-full justify-between">
+    <div class="flex flex-col col-span-1 mb-4">
       <h2>Brand</h2>
-      @for (brand of brands; track $index) {
-      <mat-checkbox
-        [checked]="brand.checked"
-        (change)="brand.checked = !brand.checked; onBrandChange()"
-        >{{ brand.name }}</mat-checkbox
-      >
-      }
+      <div class="flex md:flex-col lg:flex-col">
+        @for (brand of brands; track $index) {
+        <mat-checkbox
+          [checked]="brand.checked"
+          (change)="brand.checked = !brand.checked; onBrandChange()"
+          >{{ brand.name }}</mat-checkbox
+        >
+        }
+      </div>
     </div>
     <div class="grid gap-4 col-span-4">
       <div class="flex flex-col gap-4">
@@ -30,7 +34,7 @@
           <div class="w-full h-0.5 bg-slate-100 text-slate-800 mt-2 mb-1"></div>
         </div>
         <!-- Card1 -->
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           @for (product of (filteredProducts[0] ? filteredProducts : products);
           track $index) {
           <div

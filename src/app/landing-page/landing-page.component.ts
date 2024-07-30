@@ -1,10 +1,25 @@
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { Hero1Component } from '../hero1/hero1.component';
 import { Hero2Component } from '../hero2/hero2.component';
 import { Hero3Component } from '../hero3/hero3.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDrawer,
+  MatSidenav,
+  MatSidenavModule,
+} from '@angular/material/sidenav';
+import { AddToCartService } from '../assets/service/add-to-cart.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -16,11 +31,22 @@ import { Hero3Component } from '../hero3/hero3.component';
     Hero2Component,
     Hero1Component,
     Hero3Component,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent {
+  @ViewChild('drawer') drawer: MatDrawer | undefined;
+  showFiller = false;
+
+  //DI
+  addToCartService = inject(AddToCartService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   @HostListener('window:scroll', ['$event'])
@@ -60,5 +86,13 @@ export class LandingPageComponent {
     } else {
       null;
     }
+  }
+  checkOut() {
+    this.addToCartService.clearProductBuyNow();
+    this.router.navigate(['/order-summary', 'checkout', '11149088']);
+    if (this.drawer) {
+      this.drawer.close(); // Close the drawer
+    }
+    this.addToCartService._showCart.update(() => false);
   }
 }

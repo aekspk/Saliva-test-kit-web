@@ -1,24 +1,83 @@
-<div class="relative hero-scroll1">
-  <!-- Image BG -->
-  <div
-    class="hero bg-image h-full fixed z-0 bg1"
-    style="
-      /* background-image: url(/assets/image/bg-resize2.jpg); */
-      background-image: url(/assets/image/cov2.jpg);
-      background-repeat: no-repeat; /* Prevent background image from repeating */
-      background-size: cover; /* Ensure background image covers the entire element */
-    "
+<mat-drawer-container class="example-container" autosize>
+  <!-- Drawer -->
+  <mat-drawer
+    #drawer
+    class="example-sidenav h-full overflow-y-hidden p-4 fixed"
+    mode="over"
+    position="end"
   >
-    <div class="hero-overlay bg-opacity-50"></div>
-  </div>
+    <button
+      class="btn border-none bg-orange-600 text-white hover:bg-orange-500 w-[194px] rounded-full mb-8"
+      (click)="checkOut()"
+    >
+      Check out
+    </button>
+    @for (summaryProduct of addToCartService.cartList(); track $index) {
+    <div
+      class="h-fit bg-white text-slate-600 hero2 w-[200px] md:w-[300px] lg:w-[500px] xl:w-[500px] 2xl:w-[500px]"
+    >
+      <div class="grid grid-cols-5 w-full items-center gap-4">
+        <figure class="col-span-1">
+          <img class="rounded-md" src="{{ summaryProduct.product.img }}" />
+        </figure>
+        <div class="col-span-4 flex items-start justify-between gap-4">
+          <h2 class="card-title text-base text-slate-800 w-[291px] text-wrap">
+            {{ summaryProduct.product.name }}
+          </h2>
+          <div class="flex flex-col gap-2 items-end">
+            <p class="card-subtitle font-md text-lg">
+              Qty : {{ summaryProduct.quantity }}
+            </p>
+            <p class="card-subtitle font-bold text-lg text-slate-800">
+              ${{ summaryProduct.quantity * summaryProduct.product.price }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-0.5 bg-slate-100 text-slate-800 my-4"></div>
+    </div>
+    }
+  </mat-drawer>
 
-  <div class="sticky z-10 w-full">
-    <!-- Header -->
-    <app-header class="header z-20 text-slate-100"></app-header>
+  <div class="relative hero-scroll1 overflow-x-hidden">
+    <!-- Image BG -->
+    <div
+      class="hero bg-image h-full fixed z-0 bg1"
+      style="
+        /* background-image: url(/assets/image/bg-resize2.jpg); */
+        background-image: url(/assets/image/cov2.jpg);
+        background-repeat: no-repeat; /* Prevent background image from repeating */
+        background-size: cover; /* Ensure background image covers the entire element */
+      "
+    >
+      <div class="hero-overlay bg-opacity-50"></div>
+    </div>
 
-    <!-- Hero -->
-    <app-hero1></app-hero1>
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
+    <div class="sticky z-10 w-full">
+      <!-- Header -->
+      <app-header class="header z-20 text-slate-100"></app-header>
+
+      <!-- Hero -->
+      <app-hero1></app-hero1>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </div>
+    <!-- Cart -->
+    @if (addToCartService.showCart()) {
+    <div
+      class="flex justify-center items-center z-20 fixed w-12 h-12 bottom-12 right-12 bg-orange-600 rounded-full cursor-pointer border-solid border-2 border-orange-600 p-2 shadow-lg"
+      (click)="drawer.toggle()"
+    >
+      <div
+        class="text-orange-500 flex justify-center items-center z-20 fixed w-8 h-8 bottom-20 right-12 bg-white rounded-full cursor-pointer border-solid border-2 border-orange-600 p-2 shadow-lg"
+      >
+        {{ addToCartService.cartList().length }}
+      </div>
+      <mat-icon
+        class="transform scale-200 text-white"
+        svgIcon="cart"
+      ></mat-icon>
+    </div>
+    }
   </div>
-</div>
+</mat-drawer-container>

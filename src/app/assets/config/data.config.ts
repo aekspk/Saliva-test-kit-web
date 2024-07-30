@@ -16,11 +16,11 @@ export const brand = [
 export const products = [
   {
     id: '1',
-    name: 'Lyher COVID-19 Rapid Antigen Nasal Test 5 Pack',
+    name: '2San COVID-19 Rapid Antigen Nasal Test 5 Pack',
     brand: '2San',
     price: 13.99,
     orderQuantity: '3,714',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/1200w/products/271829/4337952/ZpVIHmRmf0aPVB3I7zRq-LdwQ__55082.1719918791.jpg?c=1',
+    img: 'assets/image/Designer (5).jpeg',
     date: '2021-10-01',
   },
   {
@@ -29,16 +29,16 @@ export const products = [
     brand: 'Ecotest',
     price: 21.99,
     orderQuantity: '114',
-    img: 'https://m.media-amazon.com/images/I/41DvxAhSHFL.jpg',
+    img: 'assets/image/Designer (4).jpeg',
     date: '2021-9-01',
   },
   {
     id: '3',
-    name: 'Lyher COVID-19 Rapid Antigen Test Nasal Single Test',
+    name: '2San COVID-19 Rapid Antigen Test Nasal Single Test',
     brand: '2San',
     price: 14.18,
     orderQuantity: '612',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/580w/products/293288/4343323/cRVn4BrrrzfneA4oAxaf06jUg__26622.1720091753.jpg?c=1',
+    img: 'assets/image/Designer (6).jpeg',
     date: '2021-8-01',
   },
   {
@@ -47,7 +47,7 @@ export const products = [
     brand: 'Touchbio',
     price: 22.18,
     orderQuantity: '114',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/1200w/products/281423/4141879/IIlXye4JH5fkg1B0Yxs40d2ps__06918.1720609489.jpg?c=1',
+    img: 'assets/image/Designer (7).jpeg',
     date: '2021-7-01',
   },
   {
@@ -56,7 +56,7 @@ export const products = [
     brand: '2San',
     price: 5.18,
     orderQuantity: '114',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/580w/products/284688/3400731/k-s35RRDiVix0aNMQoETTFgSg__84619.1720695672.jpg?c=1',
+    img: 'assets/image/Designer (8).jpeg',
     date: '2021-6-01',
   },
   {
@@ -65,7 +65,7 @@ export const products = [
     brand: '2San',
     price: 9.18,
     orderQuantity: '114',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/580w/products/284765/3400817/Tb7cOhX1ht18dbnFfXMYVHvHk__82622.1720523136.jpg?c=1',
+    img: 'assets/image/Designer (9).jpeg',
     date: '2021-5-01',
   },
 ];
@@ -73,11 +73,11 @@ export const products = [
 export const productDetails = [
   {
     id: '1',
-    name: 'Lyher COVID-19 Rapid Antigen Nasal Test 5 Pack',
+    name: '2San COVID-19 Rapid Antigen Nasal Test 5 Pack',
     brand: '2San',
     price: 13.99,
     orderQuantity: '3,714',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/1200w/products/271829/4337952/ZpVIHmRmf0aPVB3I7zRq-LdwQ__55082.1719918791.jpg?c=1',
+    img: 'assets/image/Designer (5).jpeg',
     date: '2021-10-01',
     description: `The COVID-19 Antigen Test (Oral Fluid) is a single-use test kit intended to detect the novel coronavirus SARS-CoV-2 that causes COVID-19 in human oral fluid. This test is designed for home use with self-collected oral fluid samples from symptomatic individuals who are suspected of being infected with COVID-19.
 
@@ -92,7 +92,7 @@ Specificity: 100%`,
     brand: 'Ecotest',
     price: 21.99,
     orderQuantity: '114',
-    img: 'https://m.media-amazon.com/images/I/41DvxAhSHFL.jpg',
+    img: 'assets/image/Designer (4).jpeg',
     date: '2021-9-01',
     description: `The COVID-19 Antigen Test (Oral Fluid) is a single-use test kit intended to detect the novel coronavirus SARS-CoV-2 that causes COVID-19 in human oral fluid. This test is designed for home use with self-collected oral fluid samples from symptomatic individuals who are suspected of being infected with COVID-19.
 
@@ -103,11 +103,11 @@ Specificity: 100%`,
   },
   {
     id: '3',
-    name: 'Lyher COVID-19 Rapid Antigen Test Nasal Single Test',
+    name: '2San COVID-19 Rapid Antigen Test Nasal Single Test',
     brand: '2San',
     price: 14.18,
     orderQuantity: '612',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/580w/products/293288/4343323/cRVn4BrrrzfneA4oAxaf06jUg__26622.1720091753.jpg?c=1',
+    img: 'assets/image/Designer (6).jpeg',
     date: '2021-8-01',
     description: `The COVID-19 Antigen Test (Oral Fluid) is a single-use test kit intended to detect the novel coronavirus SARS-CoV-2 that causes COVID-19 in human oral fluid. This test is designed for home use with self-collected oral fluid samples from symptomatic individuals who are suspected of being infected with COVID-19.
 
@@ -122,7 +122,7 @@ Specificity: 100%`,
     brand: 'Touchbio',
     price: 22.18,
     orderQuantity: '114',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/1200w/products/281423/4141879/IIlXye4JH5fkg1B0Yxs40d2ps__06918.1720609489.jpg?c=1',
+    img: 'assets/image/Designer (7).jpeg',
     date: '2021-7-01',
     description: `The COVID-19 Antigen Test (Oral Fluid) is a single-use test kit intended to detect the novel coronavirus SARS-CoV-2 that causes COVID-19 in human oral fluid. This test is designed for home use with self-collected oral fluid samples from symptomatic individuals who are suspected of being infected with COVID-19.
 
@@ -137,7 +137,7 @@ Specificity: 100%`,
     brand: '2San',
     price: 5.18,
     orderQuantity: '114',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/580w/products/284688/3400731/k-s35RRDiVix0aNMQoETTFgSg__84619.1720695672.jpg?c=1',
+    img: 'assets/image/Designer (8).jpeg',
     date: '2021-6-01',
     description: `The COVID-19 Antigen Test (Oral Fluid) is a single-use test kit intended to detect the novel coronavirus SARS-CoV-2 that causes COVID-19 in human oral fluid. This test is designed for home use with self-collected oral fluid samples from symptomatic individuals who are suspected of being infected with COVID-19.
 
@@ -152,7 +152,7 @@ Specificity: 100%`,
     brand: '2San',
     price: 9.18,
     orderQuantity: '114',
-    img: 'https://cdn11.bigcommerce.com/s-ojfjzuqgaj/images/stencil/580w/products/284765/3400817/Tb7cOhX1ht18dbnFfXMYVHvHk__82622.1720523136.jpg?c=1',
+    img: 'assets/image/Designer (9).jpeg',
     date: '2021-5-01',
     description: `The COVID-19 Antigen Test (Oral Fluid) is a single-use test kit intended to detect the novel coronavirus SARS-CoV-2 that causes COVID-19 in human oral fluid. This test is designed for home use with self-collected oral fluid samples from symptomatic individuals who are suspected of being infected with COVID-19.
 
